@@ -39,23 +39,6 @@ app.post('/api/items', async (req, res) => {
     }
 })
 
-app.post('/api/createtable', async (req, res) => {
-    const { description } = req.body;
-    try {
-        const newTable = await itemsPool.query(
-            'CREATE TABLE items (ID SERIAL PRIMARY KEY,description VARCHAR(255)',
-            [description]
-        );
-        res.status(201).json({ 
-            message: "New table created!"
-           
-         });
-    } catch (error) {
-        console.log(error);
-        res.status(500).send(error.message)
-    }
-})
-
 app.listen(5070, () => {
     console.log("Server running on port 5070");
 })
