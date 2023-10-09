@@ -47,7 +47,7 @@ app.post('/api/createtable', async (req, res) => {
             [description]
         );
         res.status(201).json({ 
-            message: "New item added!"
+            message: "New table created!"
            
          });
     } catch (error) {
