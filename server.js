@@ -35,7 +35,7 @@ app.post('/api/items', async (req, res) => {
          });
     } catch (error) {
         console.log(error);
-        res.status(500).send(error.message)
+        res.status(500).send('something went wrong')
     }
 })
 
