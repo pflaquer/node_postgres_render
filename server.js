@@ -26,7 +26,7 @@ app.post('/api/items', async (req, res) => {
     const { description } = req.body;
     try {
         const newItem = await itemsPool.query(
-            'INSERT INTO items (description) VALUES ($1) RETURNING *',
+            'INSERT INTO items (description) VALUES ($1,req.body.description) RETURNING *',
             [description]
         );
         res.status(201).json({ 
