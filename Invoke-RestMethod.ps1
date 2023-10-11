@@ -3,6 +3,6 @@
 $Url = "https://nodejs-db-app.onrender.com/api/items"
 $Desc = "chromebook"
 $Body = @{
-    description = 12
+    description = Read-Host 
 } | ConvertTo-Json
 Invoke-RestMethod -Method 'Post' -ContentType 'application/json' -Uri $Url -Body $Body
